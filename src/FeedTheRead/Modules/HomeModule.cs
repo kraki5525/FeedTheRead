@@ -8,7 +8,8 @@ namespace FeedTheRead.Modules
         {
             Get["/"] = p =>
                 {
-                    return "Ok";
+                    return Negotiate
+                        .WithView("home.cshtml");
                 };
         }
     }

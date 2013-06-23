@@ -24,6 +24,19 @@ namespace FeedTheRead.Tests
 
             result.StatusCode.Should().Be(HttpStatusCode.OK);
         }
+        
+        [Test]
+        public void DefaultContainsAFeedSection()
+        {
+            var browser = new Browser(with =>
+                {
+                    with.Module<HomeModule>();
+                });
+
+            var result = browser.Get("/", with => with.HttpRequest());
+
+            result.Body["#feed-list"].ShouldExistOnce();
+        }
 
     }
 }

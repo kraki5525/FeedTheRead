@@ -14,6 +14,7 @@ namespace FeedTheRead.Tests
         {
             var browser = new Browser(with =>
                 {
+                    with.RootPathProvider<TestRootPathProvider>();
                     with.Module<HomeModule>();
                 });
 
@@ -30,6 +31,7 @@ namespace FeedTheRead.Tests
         {
             var browser = new Browser(with =>
                 {
+                    with.RootPathProvider<TestRootPathProvider>();
                     with.Module<HomeModule>();
                 });
 

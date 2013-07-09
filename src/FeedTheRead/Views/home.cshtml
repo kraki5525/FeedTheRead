@@ -4,6 +4,13 @@
     <title></title>
 </head>
 <body>
-    <div id="feed-list"></div>
+    <div id="feed-list">
+        <ul>
+        @foreach (var feed in @Model)
+        {
+            <li id="feed-@feed.Id" class="feed"><a href="@feed.Uri">@feed.Name</a></li>
+        }
+        </ul>
+    </div>
 </body>
 </html>
